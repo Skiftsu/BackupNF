@@ -294,9 +294,9 @@ fn content_unit_ui(frame: &mut Frame, area: &Rect, unit: &SConfigElement, select
         frame.render_widget(Block::new().borders(Borders::NONE).bg(Color::Gray), *area);
     }
 
-    let mut path_widget = Paragraph::new(unit.path.clone()).black();
+    let mut path_widget = Paragraph::new(unit.path.clone()).gray();
     if selected {
-        path_widget = path_widget.gray();
+        path_widget = path_widget.black();
     }
     frame.render_widget(path_widget, layout[0]);
 
@@ -309,7 +309,7 @@ fn content_unit_ui(frame: &mut Frame, area: &Rect, unit: &SConfigElement, select
 
     let mut type_text_widget = Paragraph::new(type_text).bold().blue();
     if selected {
-        type_text_widget = type_text_widget.bg(Color::Blue);
+        type_text_widget = type_text_widget.bg(Color::Blue).black();
     }
     frame.render_widget(type_text_widget, layout[1]);
 }
